@@ -1,0 +1,230 @@
+﻿@model StudentEditViewModel
+
+
+@{
+    ViewBag.Title = "Edit Student";
+    var PhotoPath = "~/images/" + (Model.ExistingPhotoPath ?? "employee.png");
+}
+    <div class="container">
+        <form enctype="multipart/form-data" asp-controller="Home" asp-action="edit" method="post" class="mt-3">
+            <input hidden asp-for="Id" />
+            <input hidden asp-for="ExistingPhotoPath" />
+
+            <div class="form-group row">
+                <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+
+                    <input asp-for="Name" class="form-control" placeholder="Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Gender" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <select asp-for="Gender"
+                            asp-items="Html.GetEnumSelectList<GenderEnum>()">
+                        <option value="@Model.Gender">Please Select</option>
+                    </select>
+
+                    <span asp-validation-for="Gender" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Email" class="form-control" placeholder="Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label asp-for="DOB" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="DOB" class="form-control" placeholder="Date Of Birth" />
+                    <span asp-validation-for="DOB" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Address" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Address" class="form-control" placeholder="Address" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label asp-for="Identification" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Identification" class="form-control" placeholder="Identification" />
+                    <span asp-validation-for="Identification" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+
+
+
+
+            <div class="form-group row">
+                <label asp-for="Nationality" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Nationality" class="form-control" placeholder="Nationality" />
+                    <span asp-validation-for="Nationality" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label asp-for="Phone" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="Phone" class="form-control" placeholder="Phone" />
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+                <label asp-for="HealthCondition" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="HealthCondition" class="form-control" placeholder="HealthCondition" />
+                    <span asp-validation-for="HealthCondition" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label asp-for="Marital" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <select asp-for="Marital"
+                            asp-items="Html.GetEnumSelectList<maritalStatus>()">
+                        <option value="">Please Select</option>
+                    </select>
+
+                    <span asp-validation-for="Marital" class="text-danger"></span>
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label asp-for="StudentStatus" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <select asp-for="StudentStatus"
+                            asp-items="Html.GetEnumSelectList<StudentEnum>()">
+                        <option value="">Please Select</option>
+                    </select>
+
+                    <span asp-validation-for="StudentStatus" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="AdmissionType" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <select asp-for="AdmissionType"
+                            asp-items="Html.GetEnumSelectList<admissionEnum>()">
+                        <option value="">Please Select</option>
+                    </select>
+
+                    <span asp-validation-for="AdmissionType" class="text-danger"></span>
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group row">
+                <label asp-for="NextOfKinName" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="NextOfKinName" class="form-control" placeholder="Next Of Kin Name" />
+                    <span asp-validation-for="NextOfKinName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="NextOfKinPhone" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="NextOfKinName" class="form-control" placeholder="Next Of Kin Phone" />
+                    <span asp-validation-for="NextOfKinPhone" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="NextOfKinAddress" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <input asp-for="NextOfKinAddress" class="form-control" placeholder="Next Of Kin Address" />
+                    <span asp-validation-for="NextOfKinAddress" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+                <label for="Photo" class="col-sm-2 col-form-label">Photo</label>
+                <div class="col-sm-10">
+                    <div class="custom-file">
+                        <input multiple asp-for="Photo " class="form-control custom-file-input" type="file" id="Photo" name="Photo" />
+                        <label class="custom-file-label">Click here to change Photo...</label>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group row col-sm-4 offset-4">
+
+                <img src="@PhotoPath" class="imageThumbNail" asp-append-version="true" />
+            </div>
+
+
+
+
+
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a asp-controller="home" asp-action="index"
+                       class="btn btn-primary">Cancel</a>
+                </div>
+            </div>
+
+            @section Scripts{
+                <script>
+                    $(document).ready(function () {
+                        $('.custom-file-input').on("change", function () {
+                            var fileName = $(this).val().split("\\").pop();
+                            $(this).next('.custom-file-label').html(fileName);
+
+
+                        });
+                    })
+
+                </script>
+            }
+
+        </form>
+    </div>
